@@ -1,0 +1,12 @@
+# 완주하지 못한 단 한명의 선수 출력 
+# 동명이인 처리
+
+def solution(participant, completion):
+    participant.sort()
+    completion.sort()
+    for c in range(len(completion)):
+        if participant[c] != completion[c]:
+            return participant[c]
+    # 예외 : for문 다 돌았는데도 배열 간 다른 원소 없으면 
+    # participant의 맨 마지막 원소 출력
+    return participant[-1]
